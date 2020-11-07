@@ -3,9 +3,30 @@
 language: en
 
 pipeline:
-# This key can be left empty. The pipeline will then be provided from a default configuration during training.
+  - name: HFTransformersNLP
+    model_name: "gpt2"
+    model_weights: "gpt2"
+  - name: "LanguageModelTokenizer"
+    "intent_tokenization_flag": False
+    "intent_split_symbol": "_"
+  - name: "LanguageModelFeaturizer"
+  - name: "SklearnIntentClassifier"
+    C: [1, 2, 5, 10, 20, 100]
+    kernels: ["linear"]
+    "gamma": [0.1]
+    "max_cross_validation_folds": 5
+    "scoring_function": "f1_weighted"
+
+
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
 policies:
-# This key can be left empty. Policies will then be provided from a default configuration during training.
+# # No configuration for policies was provided. The following default policies were used to train your model.
+# # If you'd like to customize them, uncomment and adjust the policies.
+# # See https://rasa.com/docs/rasa/policies for more information.
+#   - name: MemoizationPolicy
+#   - name: TEDPolicy
+#     max_history: 5
+#     epochs: 100
+#   - name: RulePolicy
