@@ -7,6 +7,6 @@ USER root
 RUN pip install transformers
 RUN chmod -R 777 /app
 RUN rasa train nlu
-USER 1001
-
 ENTRYPOINT ["/app/server.sh"]
+#USER 1001
+
