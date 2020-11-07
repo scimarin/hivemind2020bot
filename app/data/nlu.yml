@@ -1,6 +1,23 @@
 version: "2.0"
 
 nlu:
+
+
+- regex: name
+  examples: |
+    - [a-zA-Z]{3,15}
+
+- lookup: positions
+   examples: |
+     - designers
+     - a designer
+     - developers
+     - a developer
+     - AI engineers
+     - an AI engineer
+     - master thesis worker
+
+
 - intent: greet
   examples: |
     - hey
@@ -17,6 +34,10 @@ nlu:
     - goodevening
     - good afternoon
 
+- intent: shared_name
+  examples: |
+    - 
+
 - intent: goodbye
   examples: |
     - good afternoon
@@ -30,6 +51,40 @@ nlu:
     - see you around
     - bye bye
     - see you later
+
+- intent: shared_name
+  examples: |
+    - [Koen](name)
+    - Im [Sergiu](name)
+    - I'm [Adriaan](name)
+    - My name is [Roosa](name)
+    - Me is [Veronika](name)
+
+- intent: positions_inquiry
+  examples: |
+    - Are you hiring?
+    - Do you have any jobs open? 
+    - Are there any job opportunities?
+    - What positions do you have open?
+    - Do you have any career opportunities?
+    - Are you searching for [a designer](positons)?
+
+- intent: company_inquiry
+  examples: |
+    - So what does you company do?
+    - What does Just AI do?
+    - What are you up to?
+    - What do you do?
+
+- intent: location_inquiry
+  examples: |
+    - Where are you based?
+    - Where are you located?
+    - Where do you have your offices?
+    - Where is your office located?
+    - Are you based in Helsinki?
+    - Are you located in Europe?
+
 
 - intent: affirm
   examples: |
@@ -50,43 +105,4 @@ nlu:
     - no way
     - not really
 
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
 
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
