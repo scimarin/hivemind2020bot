@@ -1,6 +1,8 @@
 version: "2.0"
 
 nlu:
+
+
 - regex: name
   examples: |
     - [a-zA-Z]{3,15}
@@ -14,19 +16,8 @@ nlu:
      - AI engineers
      - an AI engineer
      - master thesis worker
-- intent: more_info
-  examples: |
-    - can you tell me more?
-    - what is it again?
-    - what about other ones?
-    - can you give me more examples?
-    - what about others?
-    - anything else?
-    - something else?
-    - how about something else?
-    - maybe tell me more?
-    - tell me more
-    - say more
+
+
 - intent: greet
   examples: |
     - hey
@@ -63,11 +54,11 @@ nlu:
 
 - intent: shared_name
   examples: |
-    - [Koen](name)
-    - Im [Sergiu](name)
-    - I'm [Adriaan](name)
-    - My name is [Roosa](name)
-    - Me is [Veronika](name)
+    - [Koen](PERSON)
+    - Im [Sergiu](PERSON)
+    - I'm [Adriaan](PERSON)
+    - My name is [Roosa](PERSON)
+    - Me is [Veronika](PERSON)
 
 - intent: positions_inquiry
   examples: |
@@ -93,7 +84,6 @@ nlu:
     - Where is your office located?
     - Are you based in Helsinki?
     - Are you located in Europe?
-
 
 - intent: affirm
   examples: |
