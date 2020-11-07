@@ -1,8 +1,6 @@
 version: "2.0"
 
 nlu:
-
-
 - regex: name
   examples: |
     - [a-zA-Z]{3,15}
@@ -16,8 +14,19 @@ nlu:
      - AI engineers
      - an AI engineer
      - master thesis worker
-
-
+- intent: more_info
+  examples: |
+    - can you tell me more?
+    - what is it again?
+    - what about other ones?
+    - can you give me more examples?
+    - what about others?
+    - anything else?
+    - something else?
+    - how about something else?
+    - maybe tell me more?
+    - tell me more
+    - say more
 - intent: greet
   examples: |
     - hey
